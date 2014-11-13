@@ -1,0 +1,29 @@
+.wrapper {
+  margin-bottom: 50px;
+}
+
+h2 {
+  margin-bottom: 25px;
+}
+
+/* gw-ui.select
+ ------------------- */
+gw-select li > a,
+.gw-select li > a {
+  cursor: pointer;
+}
+
+gw-select-find > input,
+.gw-select > input {
+  text-align: left;
+  cursor: text;
+  border-color: #ccc;
+}
+
+gw-select-find > input:active,
+.gw-select > input:active,
+gw-select-find > input.active,
+.gw-select > input.active {
+  box-shadow: none;
+  -webkit-box-shadow: none;
+}

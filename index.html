@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html ng-app="gw-ui">
+    <head>
+        <link rel='stylesheet' type='text/css' href='http://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic'>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>geowiz-ui examples</title>
+        <link rel="stylesheet" href="vendor/css/bootstrap.css"/>
+        <link rel="stylesheet" type="text/css" href="css/styles.css">
+    </head>
+    <body ng-controller="mainCtrl">
+        <div class="container">
+            <div class="col-md-offset-1 col-md-10 col-sm-12">
+                <h1>Examples of geowiz-ui elements</h1>
+                <hr/>
+                <div class="wrapper">
+                    <h2 id="select"><a href="#select">#</a> gw-ui.select</h2>
+                    <pre>models.municipality = {{ models.municipality | json }}</pre>
+                    <gw-select gw-selected="models.municipality" gw-elements="municipalities" gw-label="name"></gw-select>
+                </div>
+                <!-- TODO
+                <div class="wrapper">
+                    <h2 id="selectTree"><a href="#selectTree">#</a> gw-ui.selectTree</h2>
+                </div>
+                -->
+                <!-- TODO
+                <div class="wrapper">
+                    <h2 id="selectFind"><a href="#selectFind">#</a> gw-ui.selectFind</h2>
+                    <pre>models.municipality = {{ models.municipality | json }}</pre>
+                    <gw-select-find gw-selected="models.municipality" gw-elements="municipalities" gw-label="name"></gw-select-find>
+                </div>
+                -->
+            </div>
+        </div>
+        <script type="text/javascript" src="vendor/js/jquery-1.11.1.js"></script>
+        <script type="text/javascript" src="vendor/js/bootstrap.js"></script>
+        <script type="text/javascript" src="vendor/js/angular.js"></script>
+        <script type="text/javascript" src="js/gw-ui.select.js"></script>
+        <script type="text/javascript">
+            (function () {
+                angular.module("gw-ui", ['gw-ui.select']).
+                    controller("mainCtrl", ['$scope', function ($scope) {
+                        // Sample data
+                        $scope.municipalities = [
+                            {name: "Municipality", code: 1},
+                            {name: "Muni", code: 10},
+                            {name: "Municipality with large name", code: 123},
+                            {name: "Just another", code: 1001}
+                        ];
+                        $scope.years = [{year: 2014}, {year: 2015}, {year: 2016}];
+                        $scope.models = {
+                            municipality: $scope.municipalities[0],
+                            year: $scope.years[0],
+                        };
+                }]);
+            })();
+        </script>
+    </body>
+</html>
