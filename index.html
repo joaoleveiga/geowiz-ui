@@ -22,7 +22,7 @@
                 <div class="wrapper">
                     <h2 id="selectFilter"><a href="#selectFilter">#</a> gw-ui.select w/ filtering</h2>
                     <pre>qYear = {{ qYear }}</pre>
-                    <select ng-model="qYear" ng-options="y.year for y in years"></select>
+                    <label>Filter by year:</label> <select ng-model="qYear" ng-options="y.year for y in years"></select><br/>
                     <gw-select gw-filter="qYear.year" gw-show="true" gw-selected="models.municipality" gw-elements="municipalities" gw-label="name"></gw-select>
                 </div>
             </div>
