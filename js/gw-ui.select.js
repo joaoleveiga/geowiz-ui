@@ -4,7 +4,7 @@
       return {
         scope: {gwSelected: '=', gwElements: '=', gwFilter: '='},
         restrict: 'AE',
-        template: '<div class="btn-group gw-select">' +
+        template: '<div class="btn-group gw-select" ng-style="fixedWidth">' +
             '<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">' +
               '<span class="current">{{ gwSelected[label] }}</span> <span class="caret"></span>' +
             '</button>' +
@@ -16,6 +16,11 @@
         link: function($scope, iElm, iAttrs) {
           $scope.label = iAttrs.gwLabel;
           if (iAttrs.gwShow) iElm.find('ul').addClass("show");
+          if (parseInt(iAttrs.gwWidth, 10) > 10) {
+            iElm.addClass("fixed-width");
+            iElm.find('span.current').addClass('pull-left');
+            $scope.fixedWidth = {width: iAttrs.gwWidth + 'px'};
+          }
           $scope.select = function (element) {
             $scope.gwSelected = element;
           };

@@ -27,3 +27,19 @@ gw-select-find > input.active,
   box-shadow: none;
   -webkit-box-shadow: none;
 }
+
+.fixed-width {
+  float: none;
+  margin-left: 0;
+}
+
+.fixed-width .dropdown-toggle {
+  width: 100%;
+  padding-right: 25px;
+}
+
+.fixed-width .current {
+  overflow: hidden;
+  width: 100%;
+  text-align: left;
+}

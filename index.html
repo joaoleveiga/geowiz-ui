@@ -13,14 +13,17 @@
         <div class="container">
             <div class="col-md-offset-1 col-md-10 col-sm-12">
                 <h1>Examples of geowiz-ui elements</h1>
+                <p class="lead">This page shows a set of live examples for the geowiz-ui AngularJS module.</p>
                 <hr/>
                 <div class="wrapper">
                     <h2 id="select"><a href="#select">#</a> gw-ui.select</h2>
+                    <p><code>&lt;gw-select gw-width="250" gw-selected="models.municipality" gw-elements="municipalities" gw-label="name"&gt;</code></p>
                     <pre>models.municipality = {{ models.municipality | json }}</pre>
-                    <gw-select gw-selected="models.municipality" gw-elements="municipalities" gw-label="name"></gw-select>
+                    <gw-select gw-width="250" gw-selected="models.municipality" gw-elements="municipalities" gw-label="name"></gw-select>
                 </div>
                 <div class="wrapper">
                     <h2 id="selectFilter"><a href="#selectFilter">#</a> gw-ui.select w/ filtering</h2>
+                    <p><code>&lt;gw-select gw-filter="qYear.year" gw-show="true" gw-selected="models.municipality" gw-elements="municipalities" gw-label="name"&gt;</code></p>
                     <pre>qYear = {{ qYear }}</pre>
                     <label>Filter by year:</label> <select ng-model="qYear" ng-options="y.year for y in years"></select><br/>
                     <gw-select gw-filter="qYear.year" gw-show="true" gw-selected="models.municipality" gw-elements="municipalities" gw-label="name"></gw-select>
