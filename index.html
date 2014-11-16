@@ -19,18 +19,12 @@
                     <pre>models.municipality = {{ models.municipality | json }}</pre>
                     <gw-select gw-selected="models.municipality" gw-elements="municipalities" gw-label="name"></gw-select>
                 </div>
-                <!-- TODO
                 <div class="wrapper">
-                    <h2 id="selectTree"><a href="#selectTree">#</a> gw-ui.selectTree</h2>
+                    <h2 id="selectFilter"><a href="#selectFilter">#</a> gw-ui.select w/ filtering</h2>
+                    <pre>qYear = {{ qYear }}</pre>
+                    <select ng-model="qYear" ng-options="y.year for y in years"></select>
+                    <gw-select gw-filter="qYear.year" gw-show="true" gw-selected="models.municipality" gw-elements="municipalities" gw-label="name"></gw-select>
                 </div>
-                -->
-                <!-- TODO
-                <div class="wrapper">
-                    <h2 id="selectFind"><a href="#selectFind">#</a> gw-ui.selectFind</h2>
-                    <pre>models.municipality = {{ models.municipality | json }}</pre>
-                    <gw-select-find gw-selected="models.municipality" gw-elements="municipalities" gw-label="name"></gw-select-find>
-                </div>
-                -->
             </div>
         </div>
         <script type="text/javascript" src="vendor/js/jquery-1.11.1.js"></script>
@@ -43,10 +37,10 @@
                     controller("mainCtrl", ['$scope', function ($scope) {
                         // Sample data
                         $scope.municipalities = [
-                            {name: "Municipality", code: 1},
-                            {name: "Muni", code: 10},
-                            {name: "Municipality with large name", code: 123},
-                            {name: "Just another", code: 1001}
+                            {name: "Municipality", code: 1, years: [2014, 2015, 2016]},
+                            {name: "Muni", code: 10, years: [2014, 2015, 2016]},
+                            {name: "Municipality with large name", code: 123, years: [2015, 2016]},
+                            {name: "Just another", code: 1001, years: [2014, 2015, 2016]}
                         ];
                         $scope.years = [{year: 2014}, {year: 2015}, {year: 2016}];
                         $scope.models = {

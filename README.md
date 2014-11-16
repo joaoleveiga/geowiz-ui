@@ -21,3 +21,12 @@ All elements are prefixed with ``gw-``.
 ## gw-select
 
 A fancier "select" element based on Bootstrap's Dropdown Buttons.
+
+**API:**
+
+``gw-selected``: Object where the currently selected element will be bound to.
+``gw-elements``: Object array with all the elements to be shown.
+``gw-label``: The name of the object property with the elements label.
+``gw-show="true"``: Always show the elements.
+
+To add a filter to the ``gw-select`` just set the ``gw-filter`` attribute to whatever expression you wish to use as filter.
