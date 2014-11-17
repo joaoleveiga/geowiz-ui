@@ -5,8 +5,8 @@ This is a compilation of custom UI elements for the [GeoWiz][1] platform. This r
 All elements are prefixed with ``gw-``.
 
 #### Dependencies
-[Bootstrap][2]
-[AngularJS][3]
+- [Bootstrap][2]
+- [AngularJS][3]
 
 [1]: http://webgis.ci2.pt "Geographic Information System for a Health Index"
 [2]: http://getbootstrap.com
@@ -25,12 +25,24 @@ A fancier "select" element based on Bootstrap's Dropdown Buttons.
 
 **Usage:**
 
-``gw-selected``: Object where the currently selected element will be bound to.
-``gw-elements``: Object array with all the elements to be shown.
-``gw-label``: The name of the object property with the elements label.
-``gw-show="true"``: Always show the elements.
+- ``gw-selected``: Object where the currently selected element will be bound to.
+- ``gw-elements``: Object array with all the elements to be shown.
+- ``gw-label``: The name of the object property with the elements label.
+- ``gw-show="true"``: Always show the elements.
 
 To add a filter to the ``gw-select`` just set the ``gw-filter`` attribute to whatever expression you wish to use as filter.
+
+**Example:**
+
+```html
+<gw-select
+    gw-filter="query"
+    gw-show="models.showQ"
+    gw-selected="models.someElement"
+    gw-elements="allElements"
+    gw-label="label">
+</gw-select>
+```
 
 ## gw-select-tree
 
@@ -40,7 +52,21 @@ Similar to [gw-select](#gw-select) but for tree-shaped data. This directive was 
 
 In addition to ``gw-selected``, ``gw-show``, and ``gw-filter``, to use this element the following attributes are needed:
 
-``gw-tree-root``: Attribute name of the tree's root element(s).
-``gw-tree-id``: Tree name.
-``gw-node-id[="id"]``: Attribute of the nodes ID.
-``gw-node-label[="label"]``: Attribute of the nodes label.
+- ``gw-tree-root``: Attribute name of the tree's root element(s).
+- ``gw-tree-id``: Tree name.
+- ``gw-node-id[="id"]``: Attribute of the nodes ID.
+- ``gw-node-label[="label"]``: Attribute of the nodes label.
+
+**Example:**
+
+```html
+<gw-select-tree
+    gw-height="200"
+    gw-selected="models.modelName"
+    gw-tree="treeObject"
+    gw-tree-root="rootAttribute"
+    gw-tree-id="treeId"
+    gw-node-id="id"
+    gw-node-label="name">
+</gw-select-tree>
+```
