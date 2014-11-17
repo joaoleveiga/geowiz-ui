@@ -31,8 +31,8 @@
                 </div>
                 <div class="wrapper">
                     <h2 id="selectTree"><a href="#selectTree">#</a> gw-ui.select-tree</h2>
-                    <p><code>&lt;gw-select-tree gw-selected="models.indicator" gw-elements="indicators" gw-tree="indicatorTree" gw-label="name"&gt;</code></p>
-                    <gw-select-tree gw-selected="models.indicator" gw-elements="indicators" gw-tree="indicatorTree" gw-label="name"></gw-select-tree>
+                    <p><code>&lt;gw-select-tree gw-height="200" gw-selected="models.indicator" gw-tree="indicatorTree" gw-label="label"&gt;</code></p>
+                    <gw-select-tree gw-height="200" gw-selected="models.indicator" gw-tree-id="indicatorTree" gw-tree="indicatorTree" gw-node-id="pk" gw-node-label="label"></gw-select-tree>
                 </div>
             </div>
         </div>
@@ -53,10 +53,43 @@
                             {name: "Just another", code: 1001, years: [2014, 2015, 2016]}
                         ];
                         $scope.years = [{year: 2014}, {year: 2015}, {year: 2016}];
+                        $scope.indicatorTree = {
+                            pk: "indicatorTree",
+                            root: [
+                                {pk: 'ind0', label: 'Indicator #0', children: []},
+                                {
+                                    pk: 'ind1',
+                                    label: 'Indicator #1 With Things',
+                                    children: [
+                                        {pk: 'ind10', label: 'Indicator #1.0', children: []},
+                                        {pk: 'ind11', label: 'Indicator #1.1', children: []},
+                                    ]
+                                },
+                                {pk: 'ind2', label: 'Indi #2', children: []},
+                                {
+                                    pk: 'ind3',
+                                    label: 'Indi #3',
+                                    children: [
+                                        {pk: 'ind30', label: 'Indicator #3.0', children: []},
+                                        {
+                                            pk: 'ind31',
+                                            label: 'Indicator #3.1',
+                                            children: [
+                                                {pk: 'ind310', label: 'Indicator #3.1.0', children: []},
+                                                {pk: 'ind311', label: 'Indicator #3.1.1', children: []},
+                                                {pk: 'ind312', label: 'Indicator #3.1.2', children: []},
+                                            ]
+                                        },
+                                        {pk: 'ind32', label: 'Indicator #3.2', children: []},
+                                    ]
+                                }
+                            ]
+                        };
                         $scope.models = {
                             showMenu: false,
                             municipality: $scope.municipalities[0],
                             year: $scope.years[0],
+                            indicator: $scope.indicatorTree.root[0]
                         };
                         $scope.indicators = {
                             ind0: {},
@@ -64,22 +97,6 @@
                             ind2: {},
                             ind10: {},
                             ind11: {},
-                        };
-
-                        $scope.indicatorTree = {
-                            id: "indicatorTree",
-                            root: [
-                                {id: 'ind0', label: 'Indicator #0', children: []},
-                                {
-                                    id: 'ind1',
-                                    label: 'Indicator #1 With Things',
-                                    children: [
-                                        {id: 'ind10', label: 'Indicator #1.0', children: []},
-                                        {id: 'ind11', label: 'Indicator #1.1', children: []},
-                                    ]
-                                },
-                                {id: 'ind2', label: 'Indi #2', children: []},
-                            ]
                         };
                 }]);
             })();

@@ -47,6 +47,10 @@ gw-select-find > input.active,
 
 /* gw-ui.select-tree
  -------------------- */
+.maxed-height {
+  overflow-y: scroll;
+}
+
 .gw-select-tree li > a {
   cursor: pointer;
   display: inline;
@@ -57,11 +61,13 @@ gw-select-find > input.active,
 .gw-select-tree li > a:focus {
   background: none;
   text-decoration: underline;
+  color: #111;
 }
 
 .gw-select-tree span.glyphicon {
   display: inline;
   font-size: 12px;
+  cursor: pointer;
 }
 
 .gw-select-tree li {
@@ -70,4 +76,20 @@ gw-select-find > input.active,
 
 .gw-select-tree span.hide-glyph {
   color: transparent;
+  content: ' ';
+  cursor: default;
+}
+
+.gw-select-tree li > ul {
+  list-style: none;
+  padding: 5px 0;
+  margin: 2px 0 0;
+}
+
+.gw-select-tree li > ul > li > a {
+  clear: both;
+  font-weight: normal;
+  line-height: 1.42857143;
+  color: #333;
+  white-space: nowrap;
 }
