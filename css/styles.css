@@ -28,6 +28,7 @@ gw-select-find > input.active,
   -webkit-box-shadow: none;
 }
 
+/* Fixed width */
 .fixed-width {
   float: none;
   margin-left: 0;
@@ -42,4 +43,31 @@ gw-select-find > input.active,
   overflow: hidden;
   width: 100%;
   text-align: left;
+}
+
+/* gw-ui.select-tree
+ -------------------- */
+.gw-select-tree li > a {
+  cursor: pointer;
+  display: inline;
+  padding: 0 5px;
+}
+
+.gw-select-tree li > a:hover,
+.gw-select-tree li > a:focus {
+  background: none;
+  text-decoration: underline;
+}
+
+.gw-select-tree span.glyphicon {
+  display: inline;
+  font-size: 12px;
+}
+
+.gw-select-tree li {
+  padding: 3px 10px;
+}
+
+.gw-select-tree span.hide-glyph {
+  color: transparent;
 }

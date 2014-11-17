@@ -25,8 +25,14 @@
                     <h2 id="selectFilter"><a href="#selectFilter">#</a> gw-ui.select w/ filtering</h2>
                     <p><code>&lt;gw-select gw-filter="qYear.year" gw-show="true" gw-selected="models.municipality" gw-elements="municipalities" gw-label="name"&gt;</code></p>
                     <pre>qYear = {{ qYear }}</pre>
-                    <label>Filter by year:</label> <select ng-model="qYear" ng-options="y.year for y in years"></select><br/>
-                    <gw-select gw-filter="qYear.year" gw-show="true" gw-selected="models.municipality" gw-elements="municipalities" gw-label="name"></gw-select>
+                    <label>Filter by year: </label><select ng-model="qYear" ng-options="y.year for y in years"></select><br/>
+                    <label>Show menu: </label><input ng-model="models.showMenu" type="checkbox"/><br/>
+                    <gw-select gw-filter="qYear.year" gw-show="models.showMenu" gw-selected="models.municipality" gw-elements="municipalities" gw-label="name"></gw-select>
+                </div>
+                <div class="wrapper">
+                    <h2 id="selectTree"><a href="#selectTree">#</a> gw-ui.select-tree</h2>
+                    <p><code>&lt;gw-select-tree gw-selected="models.indicator" gw-elements="indicators" gw-tree="indicatorTree" gw-label="name"&gt;</code></p>
+                    <gw-select-tree gw-selected="models.indicator" gw-elements="indicators" gw-tree="indicatorTree" gw-label="name"></gw-select-tree>
                 </div>
             </div>
         </div>
@@ -34,9 +40,10 @@
         <script type="text/javascript" src="vendor/js/bootstrap.js"></script>
         <script type="text/javascript" src="vendor/js/angular.js"></script>
         <script type="text/javascript" src="js/gw-ui.select.js"></script>
+        <script type="text/javascript" src="js/gw-ui.select-tree.js"></script>
         <script type="text/javascript">
             (function () {
-                angular.module("gw-ui", ['gw-ui.select']).
+                angular.module("gw-ui", ['gw-ui.select', 'gw-ui.select-tree']).
                     controller("mainCtrl", ['$scope', function ($scope) {
                         // Sample data
                         $scope.municipalities = [
@@ -47,8 +54,32 @@
                         ];
                         $scope.years = [{year: 2014}, {year: 2015}, {year: 2016}];
                         $scope.models = {
+                            showMenu: false,
                             municipality: $scope.municipalities[0],
                             year: $scope.years[0],
+                        };
+                        $scope.indicators = {
+                            ind0: {},
+                            ind1: {},
+                            ind2: {},
+                            ind10: {},
+                            ind11: {},
+                        };
+
+                        $scope.indicatorTree = {
+                            root: [
+                                {indicator: 'ind0', name: 'Indicator #0', isExpanded: false, children: []},
+                                {
+                                    isExpanded: false,
+                                    indicator: 'ind1',
+                                    name: 'Indicator #1 With Things',
+                                    children: [
+                                        {isExpanded: false, indicator: 'ind10', name: 'Indicator #1.0', children: []},
+                                        {isExpanded: false, indicator: 'ind11', name: 'Indicator #1.1', children: []},
+                                    ]
+                                },
+                                {isExpanded: false, indicator: 'ind2', name: 'Indi #2', children: []},
+                            ]
                         };
                 }]);
             })();
