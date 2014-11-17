@@ -18,14 +18,15 @@
         },
         restrict: 'AE',
         link: function($scope, iElm, iAttrs) {
-          var treeId    = iAttrs.gwTreeId,
+          var treeRoot  = iAttrs.gwTreeRoot,
+              treeId    = iAttrs.gwTreeId,
               nodeId    = iAttrs.gwNodeId || 'id',
               nodeLabel = iAttrs.gwNodeLabel || 'label',
               template  = '<div class="btn-group gw-select gw-select-tree" ng-style="fixedWidth">' +
             '<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">' +
               '<span class="current">{{ gwSelected.' + nodeLabel + ' }}</span> <span class="caret"></span>' +
             '</button>' +
-            '<ul ng-style="maxHeight" class="dropdown-menu" role="menu" ng-class="{show: gwShow}" gw-tree-root="true" gw-select-tree-nodes="gwTree.root" gw-tree-id="' + treeId + '" gw-node-id="' + nodeId + '" gw-node-label="' + nodeLabel + '"></ul>' +
+            '<ul ng-style="maxHeight" class="dropdown-menu" role="menu" ng-class="{show: gwShow}" gw-tree-root="true" gw-select-tree-nodes="gwTree.' + treeRoot + '" gw-tree-id="' + treeId + '" gw-node-id="' + nodeId + '" gw-node-label="' + nodeLabel + '"></ul>' +
           '</div>';
           // Compile template only after loading attribute information
           iElm.html($compile(template)($scope));

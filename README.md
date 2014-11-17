@@ -15,6 +15,7 @@ All elements are prefixed with ``gw-``.
 #### Contents
 
 1. [gw-select](#gw-select)
+2. [gw-select-tree](#gw-select-tree)
 
 ---
 
@@ -22,7 +23,7 @@ All elements are prefixed with ``gw-``.
 
 A fancier "select" element based on Bootstrap's Dropdown Buttons.
 
-**API:**
+**Usage:**
 
 ``gw-selected``: Object where the currently selected element will be bound to.
 ``gw-elements``: Object array with all the elements to be shown.
@@ -30,3 +31,16 @@ A fancier "select" element based on Bootstrap's Dropdown Buttons.
 ``gw-show="true"``: Always show the elements.
 
 To add a filter to the ``gw-select`` just set the ``gw-filter`` attribute to whatever expression you wish to use as filter.
+
+## gw-select-tree
+
+Similar to [gw-select](#gw-select) but for tree-shaped data. This directive was based on [angular.treeview](http://github.com/eu81273/angular.treeview) by Ahn Jae-Ha and modified to fit the purpose of using Bootstrap's dropdown.
+
+**Usage:**
+
+In addition to ``gw-selected``, ``gw-show``, and ``gw-filter``, to use this element the following attributes are needed:
+
+``gw-tree-root``: Attribute name of the tree's root element(s).
+``gw-tree-id``: Tree name.
+``gw-node-id[="id"]``: Attribute of the nodes ID.
+``gw-node-label[="label"]``: Attribute of the nodes label.
