@@ -67,18 +67,18 @@
                         };
 
                         $scope.indicatorTree = {
+                            id: "indicatorTree",
                             root: [
-                                {indicator: 'ind0', name: 'Indicator #0', isExpanded: false, children: []},
+                                {id: 'ind0', label: 'Indicator #0', children: []},
                                 {
-                                    isExpanded: false,
-                                    indicator: 'ind1',
-                                    name: 'Indicator #1 With Things',
+                                    id: 'ind1',
+                                    label: 'Indicator #1 With Things',
                                     children: [
-                                        {isExpanded: false, indicator: 'ind10', name: 'Indicator #1.0', children: []},
-                                        {isExpanded: false, indicator: 'ind11', name: 'Indicator #1.1', children: []},
+                                        {id: 'ind10', label: 'Indicator #1.0', children: []},
+                                        {id: 'ind11', label: 'Indicator #1.1', children: []},
                                     ]
                                 },
-                                {isExpanded: false, indicator: 'ind2', name: 'Indi #2', children: []},
+                                {id: 'ind2', label: 'Indi #2', children: []},
                             ]
                         };
                 }]);
